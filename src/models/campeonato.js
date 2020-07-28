@@ -24,6 +24,9 @@ const CampeonatoSchema = new mongoose.Schema({
     ],
     'etapas': [
         {
+            'pistaId': {
+                'type': 'string',
+            },
             'numeroEtapa': {
                 'type': 'number'
             },
