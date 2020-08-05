@@ -34,7 +34,7 @@ module.exports.update = async (req, res) => {
 module.exports.find = async (req, res) => {
 
     try {
-        const find = await EstoqueSchema.find({});
+        const find = await EstoqueSchema.find({}).sort({ nome: 1 });
         response = find;
     } catch (err) {
         console.log(err);
