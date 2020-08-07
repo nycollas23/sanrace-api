@@ -15,21 +15,8 @@ const PilotoSchema = new mongoose.Schema({
         'required': true
     },
     'campeonatos' : [],
-    'classificacao': [
-        {
-            'campeonatoId': {
-                'type': 'string'
-            },
-            'campeonatoNome': {
-                'type': 'string'
-            },
-            'posicao': {
-                'type': 'number'
-            },
-            'pontos': {
-                'type': 'number'
-            }
-        }
+    'categorias': [
+        
     ],
     'carro': {
         'numero' : {

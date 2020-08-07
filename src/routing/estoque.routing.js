@@ -17,4 +17,8 @@ router.get('/', (req, res) => {
     estoque.find(req, res);
 });
 
+router.post('/remove', (req, res) => {
+    estoque.delete(req, res);
+});
+
 module.exports = app => app.use('/estoque', router);

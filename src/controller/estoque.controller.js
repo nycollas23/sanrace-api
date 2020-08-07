@@ -60,10 +60,12 @@ module.exports.findOne = async (req, res) => {
 }
 
 module.exports.delete = async (req, res) => {
+
     try {
-        const find = await EstoqueSchema.deleteOne(req.params.id).remove().exec();
+        const find = await EstoqueSchema.deleteOne({_id: req.body._id});
         response = find;
     } catch (err) {
+        console.log(err);
         response = err;
         res.status(400);
     }

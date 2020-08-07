@@ -43,7 +43,7 @@ module.exports.update = async (req, res) => {
 module.exports.find = async (req, res) => {
 
     try {
-        const findPilot = await PilotSchema.find({});
+        const findPilot = await PilotSchema.find({}).sort({ nome: 1 });;
         response = findPilot;
     } catch (err) {
         response = err;

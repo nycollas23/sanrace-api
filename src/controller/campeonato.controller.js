@@ -61,7 +61,7 @@ module.exports.findOne = async (req, res) => {
 
 module.exports.delete = async (req, res) => {
     try {
-        const find = await CampeonatoSchema.deleteOne(req.params.id).remove().exec();
+        const find = await CampeonatoSchema.deleteOne(req.params.id);
         response = find;
     } catch (err) {
         response = err;

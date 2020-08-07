@@ -17,6 +17,7 @@ module.exports.loginAdm = async (req, res) => {
 
             response = {
                 'nome': login.nome,
+                'email': login.email,
                 'tipo': 'ADM',
                 'token': jwt.create(login._id)
             };
@@ -47,6 +48,7 @@ module.exports.loginPiloto = async (req, res) => {
         if (login) {
             response = {
                 'nome': login.nome,
+                'email': login.email,
                 'tipo': 'PILOTO',
                 'token': jwt.create(login._id)
             };
