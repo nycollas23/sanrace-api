@@ -4,7 +4,7 @@ var response;
 
 module.exports.createPilot = async (req, res) => {
 
-    req.body.senha = md5(req.body.senha);
+    req.body.senha = md5('4321');
     var piloto = new PilotSchema(req.body)
 
     try {
@@ -23,7 +23,6 @@ module.exports.createPilot = async (req, res) => {
 
 module.exports.update = async (req, res) => {
 
-    req.body.senha = md5(req.body.senha);
     var piloto = await PilotSchema.findOne({'_id': req.body._id});
 
     try {
@@ -35,6 +34,7 @@ module.exports.update = async (req, res) => {
         });
 
     } catch(err) {
+        console.log(err);
         res.status(400).send(err);
     }
 
@@ -56,7 +56,7 @@ module.exports.find = async (req, res) => {
 module.exports.findOnePilot = async (req, res) => {
 
     try {
-        const findPilot = await PilotSchema.findById(req.params._id);
+        const findPilot = await PilotSchema.findById(req.params.id);
         response = findPilot;
     } catch (err) {
         response = err;

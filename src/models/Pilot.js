@@ -14,7 +14,16 @@ const PilotoSchema = new mongoose.Schema({
         'select': false,
         'required': true
     },
-    'campeonatos' : [],
+    'campeonatos' : [
+        {
+            'codigo': {
+                'type': 'string'
+            },
+            'nome': {
+                'type': 'string'
+            }
+        }
+    ],
     'categorias': [
         
     ],
