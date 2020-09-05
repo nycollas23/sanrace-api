@@ -16,5 +16,7 @@ require('./src/routing/campeonato.routing')(app);
 require('./src/routing/dashboard.routing')(app);
 require('./src/routing/pista.routing')(app);
 require('./src/routing/estoque.routing')(app);
+require('./src/routing/solicitacao.routing')(app);
+// require('./src/routing/carro.routing')(app);
 
 console.info('Servidor Iniciando em 3000');
