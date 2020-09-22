@@ -4,11 +4,13 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const port = process.env.PORT_APP || 3001;
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+app.listen(port);
 
-app.listen('3000');
 require('./src/routing/pilot-routing')(app);
 require('./src/routing/auth.routing')(app);
 require('./src/routing/user.routing')(app);
@@ -19,4 +21,4 @@ require('./src/routing/estoque.routing')(app);
 require('./src/routing/solicitacao.routing')(app);
 // require('./src/routing/carro.routing')(app);
 
-console.info('Servidor Iniciando em 3000');
+console.info('Servidor Iniciando em '+port);
