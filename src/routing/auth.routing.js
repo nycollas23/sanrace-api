@@ -3,7 +3,7 @@ const authController = require('../controller/auth.controller');
 const router = express.Router();
 const optionsMiddleWare = require('../middleware/options-middle');
 
-router.use(optionsMiddleWare)
+router.use(optionsMiddleWare);
 
 router.post('/adm', (req, res) => {
     authController.loginAdm(req, res);
