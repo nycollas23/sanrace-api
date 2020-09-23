@@ -11,7 +11,6 @@ app.listen(port);
 
 app.use(function (req, res, next) {
     req.url = req.url.replace('//','/');
-    console.log(req.url);
     next();
 });
 

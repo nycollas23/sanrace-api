@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
-const dbPath = "mongodb://sanrance-teste01:NyckNath-1@mongo71-farm76.kinghost.net:27017/sanrance-teste01";
-// const dbPath = 'mongodb://localhost:27017/sanrace'
+const URL = process.env.SR_MONGO_URL || 'localhost';
+const DB = process.env.PORT_SR_MONGO_DB || 'sanrace';
+const USER = process.env.SR_MONGO_USER || '';
+const PWD = process.env.PORT_SR_MONGO_PWD || '';
+
+const dbPath = `mongodb://${USER}:${PWD}@${URL}:27017/${DB}`;
 
 mongoose.connect(dbPath, {
     useNewUrlParser: true,
