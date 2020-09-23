@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const port = process.env.PORT_APP || 3001;
+const port = process.env.PORT_SANRACE_API_APP || 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
