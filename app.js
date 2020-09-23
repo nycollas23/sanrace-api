@@ -3,15 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
 const app = express();
-const optionsMiddleWare = require('src/middleware/options-middle');
+const optionsMiddleWare = require('./src/middleware/options-middle');
 const port = process.env.PORT_SANRACE_API_APP || 3001;
-
-router.use(optionsMiddleWare);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.listen(port);
+
+router.use(optionsMiddleWare);
 
 require('./src/routing/pilot-routing')(app);
 require('./src/routing/auth.routing')(app);
