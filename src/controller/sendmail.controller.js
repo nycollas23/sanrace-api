@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 module.exports.send = async (req, res) => {
 
     const nome = req.body.nome;
+	const email = req.body.email;
     const assunto = req.body.assunto;
     const msg = req.body.msg;
     
@@ -21,9 +22,9 @@ module.exports.send = async (req, res) => {
 
     const mailOptions = { 
         from: 'SanRace Site<sanrace@ngbrkart.com.br>',
-        to: 'nycollas23@hotmail.com',
+        to: 'nycollas23@hotmail.com, sanrace@hotmail.com',
         subject: `Contato Site - SanRace`,
-        html: `<h1>Nova Mensagem no site SanRace</h1><br><p><b>Nome: </b>${nome}</p><p><b>Assunto: </b>${assunto}</p><p><b>Mensagem: </b>${msg}</p>`
+        html: `<h1>Nova Mensagem no site SanRace</h1><p><b>Nome: </b>${nome}</p><b>Email: </b>${email}</p><p><b>Assunto: </b>${assunto}</p><p><b>Mensagem: </b>${msg}</p>`
     }
 
     tranporter.sendMail(mailOptions, (err, info) => {

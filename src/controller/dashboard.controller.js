@@ -17,8 +17,14 @@ module.exports.getInformation = async (req, res) => {
             }
         );
 
+        const list = [];
+        
+		piloto.campeonatos.forEach((campeonato) => {
+			list.push(campeonato.codigo);
+		});
+
         const campeonatos = await CampeonatoSchema.find({
-            '_id': { $in: piloto.campeonatos }
+            '_id': { $in: list }
         });
 
         res.send({

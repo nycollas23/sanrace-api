@@ -5,7 +5,7 @@ const optionsMiddleWare = require('../middleware/options-middle');
 
 router.use(optionsMiddleWare);
 
-router.put('/', (req, res) => {
+router.post('/', (req, res) => {
     mailController.send(req, res);
 });
 
