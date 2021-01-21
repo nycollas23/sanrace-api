@@ -21,4 +21,4 @@ const DepoimentoSchema = new mongoose.Schema({
 
 const Depoimentos = mongoose.model('Depoimentos', DepoimentoSchema);
 
-module.exports = Estoques;
+module.exports = Depoimentos;
