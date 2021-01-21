@@ -1,6 +1,7 @@
 const CampeonatoSchema = require('../models/campeonato');
 const PilotoSchema = require('../models/pilot');
 
+
 module.exports.getInformation = async (req, res) => {
 
     try {
@@ -25,6 +26,18 @@ module.exports.getInformation = async (req, res) => {
 
         const campeonatos = await CampeonatoSchema.find({
             '_id': { $in: list }
+        });
+		
+		
+		campeonatos.forEach((campeonato) => {
+			
+			campeonato.classificacao.forEach((classificacao) => {
+				if (classificacao.idPiloto === req.body.UserId) {
+					campeonato.classificacaoPiloto.posicao = classificacao.posicao;
+					campeonato.classificacaoPiloto.pontos = classificacao.pontos;
+				}
+			});
+			
         });
 
         res.send({

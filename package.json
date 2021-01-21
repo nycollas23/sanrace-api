@@ -16,6 +16,7 @@
     "md5": "^2.2.1",
     "mongoose": "^5.9.19",
     "node-thermal-printer": "^4.1.2",
-    "nodemailer": "^6.4.13"
+    "nodemailer": "^6.4.13",
+    "request": "^2.81.0"
   }
 }

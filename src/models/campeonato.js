@@ -9,8 +9,19 @@ const CampeonatoSchema = new mongoose.Schema({
         'type': 'string',
         'required': false
     },
+	'classificacaoPiloto': {
+		'posicao': {
+			'type': 'string'
+		},
+		'pontos': {
+			'type': 'number'
+		},
+	},
     'classificacao': [
         {
+			'idPiloto': {
+                'type': 'string'
+            },
             'posicao': {
                 'type': 'number'
             },
