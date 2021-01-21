@@ -1,5 +1,6 @@
 const express = require('express');
 const depoimento = require('../controller/depoimento.controller');
+const jwt = require('../middleware/jwt-auth');
 const router = express.Router();
 
 router.use(jwt)
