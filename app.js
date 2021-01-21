@@ -23,7 +23,9 @@ require('./src/routing/pista.routing')(app);
 require('./src/routing/estoque.routing')(app);
 require('./src/routing/solicitacao.routing')(app);
 require('./src/routing/sendmail.routing')(app);
-require('./src/routing/clima.routing')(app);
+require('./src/routing/depoimento.routing')(app);
+require('./src/routing/depoimento-site.routing')(app);
+//require('./src/routing/clima.routing')(app);
 // require('./src/routing/carro.routing')(app);
 
 console.info('Servidor Iniciando em '+port);
