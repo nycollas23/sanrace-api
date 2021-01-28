@@ -14,3 +14,16 @@ module.exports.find = async (req, res) => {
 
     res.send(response);
 }
+
+module.exports.create = async (req, res) => {
+
+    try {
+        req.body.status = 'NOK';
+        const newReg = await DepoimentoSchema.create(req.body);
+        return res.send(newReg);
+
+    } catch(err) {
+        return res.status(400).send(err);
+    }
+
+}
