@@ -1,11 +1,16 @@
 // Imports
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
 const app = express();
 const port = process.env.PORT_SANRACE_API_APP || 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(upload.single('files')); 
+app.use(express.static('public'));
 
 app.listen(port);
 

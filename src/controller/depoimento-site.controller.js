@@ -27,3 +27,21 @@ module.exports.create = async (req, res) => {
     }
 
 }
+
+module.exports.updateFoto = async (req, res) => {
+
+    var update = await DepoimentoSchema.findOne({'_id': req.params.id});
+
+    try {
+        update.foto = req.body.foto;
+        update.save((err, docUpdate) => {
+            res.send({
+                'id': docUpdate._id
+            });
+        });
+
+    } catch(err) {
+        res.status(400).send(err);
+    }
+
+}
