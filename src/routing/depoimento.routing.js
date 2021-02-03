@@ -17,6 +17,10 @@ router.get('/', (req, res) => {
     depoimento.find(req, res);
 });
 
+router.get('/detail/:id', (req, res) => {
+    depoimento.findOne(req, res);
+});
+
 router.post('/remove', (req, res) => {
     depoimento.delete(req, res);
 });
